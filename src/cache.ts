@@ -97,6 +97,7 @@ export default class Cache {
         let entry;
         if (entryJsonString) {
             entry = JSON.parse(entryJsonString);
+            entry.created = new Date(entry.created);
         }
 
         let value;

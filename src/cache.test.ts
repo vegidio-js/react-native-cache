@@ -5,7 +5,7 @@ const cache = new Cache({
     namespace: "test",
     policy: {
         maxEntries: 1,
-        stdTTL: 0
+        stdTTL: 5000
     },
     backend: MemoryStore
 });

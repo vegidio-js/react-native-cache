@@ -9,7 +9,7 @@ const cache = new cache_1.default({
     namespace: "test",
     policy: {
         maxEntries: 1,
-        stdTTL: 0
+        stdTTL: 5000
     },
     backend: memoryStore_1.default
 });
