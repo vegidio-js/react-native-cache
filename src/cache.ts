@@ -7,7 +7,7 @@ export interface ICacheOptions {
 
 export interface ICachePolicy {
     maxEntries: number;
-    stdTTL: number; // second
+    stdTTL: number; // in seconds
 }
 
 export default class Cache {
@@ -104,7 +104,7 @@ export default class Cache {
         if (entry) {
             value = entry.value;
             if (this.policy.stdTTL > 0) {
-                const deadline = entry.created.getTime() + this.policy.stdTTL * 1000;
+                const deadline = entry.created.getTime() + (this.policy.stdTTL * 1000);
                 const now = Date.now();
                 if (deadline < now) {
                     this.remove(key);
